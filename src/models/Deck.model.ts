@@ -19,6 +19,20 @@ export default class Deck {
 		this.sort(this.compareFn);
 	}
 
+	public draw(): undefined | Card {
+		return this.cardArr.pop();
+	}
+
+	public shuffle() {
+		/* Randomize array in-place using Durstenfeld shuffle algorithm */
+		for (var i = this.cardArr.length - 1; i > 0; i--) {
+			var j = Math.floor(Math.random() * (i + 1));
+			var temp = this.cardArr[i];
+			this.cardArr[i] = this.cardArr[j];
+			this.cardArr[j] = temp;
+		}
+	}
+
 	private compareFn(a: Card, b: Card): number {
 		if (a.isLessThan(b)) return -1;
 		if (a.isMoreThan(b)) return 1;
