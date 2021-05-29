@@ -65,9 +65,9 @@ export default class Card {
 	public toString(): string {
 		let beginWithVowels = new RegExp("^(a|e|i|o|u|A|E|I|O|U)");
 		if (beginWithVowels.test(Ranks[this.Rank])) {
-			return `This is an ${Ranks[this.Rank]} of ${Suits[this.Suit]}`;
+			return `an ${Ranks[this.Rank]} of ${Suits[this.Suit]}`;
 		}
 
-		return `This is a ${Ranks[this.Rank]} of ${Suits[this.Suit]}`;
+		return `a ${Ranks[this.Rank]} of ${Suits[this.Suit]}`;
 	}
 }
